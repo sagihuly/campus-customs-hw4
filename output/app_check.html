@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Problem 11 — Site testing | Campus Customs</title>
+  <style>
+    :root{--navy:#092447;--gold:#c99b5b;--paper:#faf9f6;--ink:#1d2a3a;--muted:#687586;--line:#d9dce0;--green:#2d7654;--amber:#815d22}
+    *{box-sizing:border-box}body{margin:0;background:#f1f2f3;color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    main{max-width:1120px;margin:36px auto;padding:0 20px}.masthead{background:var(--navy);color:white;padding:26px 30px;border-bottom:4px solid var(--gold)}.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.7rem;color:#d9e3ed;font-weight:700}.masthead h1{font:500 clamp(1.8rem,4vw,2.6rem)/1.1 Georgia,serif;margin:9px 0}.masthead p{margin:0;color:#d9e3ed}
+    .summary,.check{background:white;border:1px solid var(--line);padding:22px 26px;margin:18px 0;box-shadow:0 4px 14px #0924470b}.summary{border-left:3px solid var(--green)}.summary strong{color:var(--green)}.check h2{font:500 1.45rem/1.25 Georgia,serif;color:var(--navy);margin:0 0 12px}.capture{margin:12px 0 0}.capture img{display:block;width:100%;height:auto;border:1px solid var(--line);background:var(--paper)}.proof{margin:12px 0 0}.facts{color:var(--muted);font-size:.92rem}.footer{color:var(--muted);font-size:.82rem;padding:8px 2px 28px}
+    @media(max-width:600px){main{margin:16px auto;padding:0 12px}.masthead,.summary,.check{padding:19px}}
+  </style>
+</head>
+<body>
+<main>
+  <header class="masthead">
+    <div class="eyebrow">Campus Customs · Problem 11</div>
+    <h1>Site testing</h1>
+    <p>Three live checks of the running React site, FastAPI Agent, and catalogue controls.</p>
+  </header>
+
+  <div class="summary"><strong>Checks passed in the running app.</strong> Chat answers and product cards were verified against the local catalogue and inventory, and sorting changed the visible product order.</div>
+
+  <section class="check" aria-labelledby="test-1">
+    <h2 id="test-1">Test 1 — Chat price and size inventory</h2>
+    <figure class="capture"><img src="app_check_images/inventory.png" alt="Live Campus Customs product page and chat showing Basic Hoodie Big Yale at $68 with 5 units in size M" width="2522" height="1722"></figure>
+    <p class="proof">The live chat answers the price and size-M stock question for Basic Hoodie Big Yale: $68 and 5 units. Both values match the SQLite catalogue and inventory.</p>
+  </section>
+
+  <section class="check" aria-labelledby="test-2">
+    <h2 id="test-2">Test 2 — Dynamic hoodie search from chat</h2>
+    <figure class="capture"><img src="app_check_images/search_results.png" alt="Live chat search for hoodies showing 27 catalogue matches and product cards with images and prices" width="2522" height="1722"></figure>
+    <p class="proof">The question “what hoodies do you have?” returns 27 catalogue matches and adds linked product cards to the Products page. The screenshot shows their real images, names, prices, and descriptions beside the chat response.</p>
+  </section>
+
+  <section class="check" aria-labelledby="test-3">
+    <h2 id="test-3">Test 3 — Product sorting</h2>
+    <figure class="capture"><img src="app_check_images/sorting.png" alt="Products page sorted by Price: high to low with $98 products at the top of the grid" width="2522" height="1722"></figure>
+    <p class="proof">With “Price: high to low” selected, the first visible products cost $98. The selected control and reordered cards appear together, showing that the catalogue sort changes the page.</p>
+  </section>
+
+  <p class="footer">Checked October 7, 2026. All screenshots were captured from the running site and are stored beside this report in <code>app_check_images/</code>.</p>
+</main>
+</body>
+</html>

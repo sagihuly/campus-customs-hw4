@@ -1,0 +1,4 @@
+fastapi==0.142.2
+uvicorn==0.54.0
+pydantic-ai-slim[openai]>=1.0,<2.0
+portkey-ai>=2.0,<3.0

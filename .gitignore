@@ -1,0 +1,22 @@
+# Local coursework data: SQLite database and source product images.
+/data/
+/data.zip
+*.db
+*.sqlite
+*.sqlite3
+
+# Local credentials and generated frontend/backend artifacts.
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+node_modules/
+dist/
+__pycache__/
+*.py[cod]
+*.tsbuildinfo
+
+# Local virtual environment and macOS metadata.
+.venv/
+.DS_Store
